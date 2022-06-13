@@ -1,0 +1,29 @@
+﻿@model M151_WebShop.Models.Movie
+
+@using (Html.BeginForm("CreateArticle", "Shop", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    // TextBox with Label
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name, "Name: ")
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control", required = "required" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Price, "Price: ")
+        @Html.TextBoxFor(m => m.Price, new { @class = "form-control", @type = "number" })
+    </div>
+    // Drop Down with Label
+    <div class="form-group">
+        @Html.LabelFor(m => m.Genre, "Genre: ")
+        @Html.EnumDropDownListFor(m => m.Genre)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Genre, "Condition: ")
+        @Html.EnumDropDownListFor(m => m.Condition)
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Genre, "USK: ")
+        @Html.EnumDropDownListFor(m => m.USK)
+    </div>
+    <input type="submit" class="btn btn-primary inline" value="submit" />
+}

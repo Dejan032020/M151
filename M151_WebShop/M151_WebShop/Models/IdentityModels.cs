@@ -24,6 +24,7 @@ namespace M151_WebShop.Models
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+        public DbSet<Movie> Movies { get; set; }
 
         public static ApplicationDbContext Create()
         {

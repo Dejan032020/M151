@@ -1,0 +1,22 @@
+﻿@model ICollection<M151_WebShop.Models.Movie>
+
+<button>
+    @Html.ActionLink("Create Article", "CreateArticle")
+</button>
+
+@foreach (M151_WebShop.Models.Movie movie in Model)
+{
+    using (Html.BeginForm($"GetMovie/{movie.Id}", "Shop", FormMethod.Get, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        Html.AntiForgeryToken();
+        <hr />
+        <button style="background-color:white; border:none;">
+            <p>@movie.Name</p>
+            <p>@movie.Genre</p>
+            @*<p>Veröffentlicht von: @movie.User.UserName</p>*@
+            <p>@movie.Price</p>
+            <p>@movie.USK</p>
+        </button>
+        <hr />
+    }
+}
