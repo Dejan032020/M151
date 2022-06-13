@@ -7,13 +7,13 @@ namespace M151_WebShop.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateDbConnection : IMigrationMetadata
+    public sealed partial class Roles : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDbConnection));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Roles));
         
         string IMigrationMetadata.Id
         {
-            get { return "202206121903509_CreateDbConnection"; }
+            get { return "202206131256380_Roles"; }
         }
         
         string IMigrationMetadata.Source

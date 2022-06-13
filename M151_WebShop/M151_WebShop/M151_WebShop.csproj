@@ -174,9 +174,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202206121903509_CreateDbConnection.cs" />
-    <Compile Include="Migrations\202206121903509_CreateDbConnection.Designer.cs">
-      <DependentUpon>202206121903509_CreateDbConnection.cs</DependentUpon>
+    <Compile Include="Migrations\202206131256380_Roles.cs" />
+    <Compile Include="Migrations\202206131256380_Roles.Designer.cs">
+      <DependentUpon>202206131256380_Roles.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -185,6 +185,7 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\Movie.cs" />
+    <Compile Include="Models\RoleManagerViewModel.cs" />
     <Compile Include="Models\USK.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -246,6 +247,7 @@
     <Content Include="Views\Shop\CreateArticle.cshtml" />
     <Content Include="Views\Shop\ShopSite.cshtml" />
     <Content Include="Views\Shop\GetArticle.cshtml" />
+    <Content Include="Views\Manage\RoleManager.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -264,8 +266,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202206121903509_CreateDbConnection.resx">
-      <DependentUpon>202206121903509_CreateDbConnection.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202206131256380_Roles.resx">
+      <DependentUpon>202206131256380_Roles.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
