@@ -6,7 +6,7 @@
 
 @foreach (M151_WebShop.Models.Movie movie in Model)
 {
-    using (Html.BeginForm($"GetMovie/{movie.Id}", "Shop", FormMethod.Get, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    using (Html.BeginForm($"GetArticle/{movie.Id}", "Shop", FormMethod.Get, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
     {
         Html.AntiForgeryToken();
         <hr />
@@ -18,5 +18,15 @@
             <p>@movie.USK</p>
         </button>
         <hr />
+    }
+    using (Html.BeginForm("DeleteArticle", "Shop", new { movieId = movie.Id }, FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        //if (User.IsInRole("Administrator"))
+        //{
+        {
+                @Html.AntiForgeryToken()
+                <input type="submit" class="btn btn-primary inline" value="delete" onclick="return confirm('Do you want to delete the Movie @movie.Name ?')" />
+        }
+        //}
     }
 }

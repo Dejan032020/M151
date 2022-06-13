@@ -15,7 +15,7 @@ namespace M151_WebShop.Controllers
         {
             using (ApplicationDbContext context = ApplicationDbContext.Create())
             {
-                // creates a list with all games from the DB 
+                // creates a list with all articles from the DB 
                 ICollection<Movie> movies = context.Movies.Include("User").ToList();
                 return View(movies);
             }
@@ -28,7 +28,7 @@ namespace M151_WebShop.Controllers
         }
 
         //
-        // Creates a new Game and add to DB
+        // Creates a new Article and add to DB
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
@@ -43,11 +43,45 @@ namespace M151_WebShop.Controllers
                 //int userId = Convert.ToInt32(User.Identity.GetUserId());
                 //movie.User = context.Users.Find(userId);
 
-                // Adds Game to DB
+                // Adds Article to DB
                 context.Movies.Add(movie);
                 context.SaveChanges();
 
                 // Go back to the main page
+                return RedirectToAction("ShopSite");
+            }
+        }
+
+        //
+        // Adds a new View to view a single Article
+        public ActionResult GetArticle(int id)
+        {
+            using (ApplicationDbContext context = ApplicationDbContext.Create())
+            {
+                var movie = context.Movies.Include("User").Single(x => x.Id == id);
+
+                return View(movie);
+            }
+        }
+
+        //
+        // Removes the Article from our DB
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        [HttpPost]
+        public ActionResult DeleteArticle(int movieId)
+        {
+            using (ApplicationDbContext context = ApplicationDbContext.Create())
+            {
+                // search for the article
+                Movie movie = context.Movies.Find(movieId);
+
+                // removes the article from the DB
+
+                context.Movies.Remove(movie);
+                context.SaveChanges();
+
+                // Return the View
                 return RedirectToAction("ShopSite");
             }
         }

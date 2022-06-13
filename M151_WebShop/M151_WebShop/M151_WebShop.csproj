@@ -245,6 +245,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shop\CreateArticle.cshtml" />
     <Content Include="Views\Shop\ShopSite.cshtml" />
+    <Content Include="Views\Shop\GetArticle.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
