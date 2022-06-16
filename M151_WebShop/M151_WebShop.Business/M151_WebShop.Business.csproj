@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\M151_WebShop.DataAccess\M151_WebShop.DataAccess.csproj" />
     <ProjectReference Include="..\M151_WebShop.Data\M151_WebShop.Data.csproj" />
   </ItemGroup>
 
