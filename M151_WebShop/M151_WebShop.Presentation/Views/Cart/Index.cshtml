@@ -1,0 +1,64 @@
+﻿@model M151_WebShop.Data.ViewModel.ShoppingCartViewModel
+@{
+    ViewBag.Title = "Shopping Cart";
+}
+
+<header>
+    <script type="text/javascript" src="../../Scripts/RemoveFromCartButton.js"></script>
+</header>
+
+<h3>
+    <em>Review</em> your cart:
+</h3>
+<p class="button">
+    @Html.ActionLink("Checkout >> ", "Payed", "Cart")
+</p>
+<div id="update-message">
+</div>
+<table>
+    <tr>
+        <th>
+            Game Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Quantity
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.CartItems)
+    {
+        <tr id="row-@item.ArticleId">
+            <td>
+                @Html.ActionLink(item.Articles.Name, "Details", "Store", new { id = item.ArticleId }, null)
+            </td>
+            <td>
+                @item.Articles.Price
+            </td>
+            <td id="item-count-@item.ArticleId">
+                @item.Count
+            </td>
+            <td>
+                <a href="#" class="RemoveLink"
+                   data-id="@item.ArticleId">
+                    Remove
+                    from cart
+                </a>
+            </td>
+        </tr>
+    }
+    <tr>
+        <td>
+            Total
+        </td>
+        <td>
+        </td>
+        <td>
+        </td>
+        <td id="cart-total">
+            @Model.CartTotal
+        </td>
+    </tr>
+</table>
