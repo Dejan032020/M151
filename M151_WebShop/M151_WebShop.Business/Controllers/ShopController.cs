@@ -5,6 +5,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using M151_WebShop.Data.Models;
+using M151_WebShop.DataAccess;
 
 namespace M151_WebShop.Controllers
 {
@@ -16,15 +18,15 @@ namespace M151_WebShop.Controllers
             using (ApplicationDbContext context = ApplicationDbContext.Create())
             {
                 // creates a list with all articles from the DB 
-                ICollection<Movie> movies = context.Movies.Include("User").ToList();
-                return View(movies);
+                ICollection<Articles> articles = context.Articles.Include("User").ToList();
+                return View(articles);
             }
         }
         [Authorize]
         public ActionResult CreateArticle()
         {
-            Movie movies = new Movie();
-            return View(movies);
+            Articles articles = new Articles();
+            return View(articles);
         }
 
         //
@@ -32,19 +34,19 @@ namespace M151_WebShop.Controllers
         [HttpPost]
         [Authorize]
         [ValidateAntiForgeryToken]
-        public ActionResult CreateArticle(Movie movie)
+        public ActionResult CreateArticle(Articles articles)
         {
             using (ApplicationDbContext context = ApplicationDbContext.Create())
             {
                 if (!ModelState.IsValid)
                 {
-                    return View(movie);
+                    return View(articles);
                 }
                 //int userId = Convert.ToInt32(User.Identity.GetUserId());
                 //movie.User = context.Users.Find(userId);
 
                 // Adds Article to DB
-                context.Movies.Add(movie);
+                context.Articles.Add(articles);
                 context.SaveChanges();
 
                 // Go back to the main page
@@ -58,9 +60,9 @@ namespace M151_WebShop.Controllers
         {
             using (ApplicationDbContext context = ApplicationDbContext.Create())
             {
-                var movie = context.Movies.Include("User").Single(x => x.Id == id);
+                var articles = context.Articles.Include("User").Single(x => x.Id == id);
 
-                return View(movie);
+                return View(articles);
             }
         }
 
@@ -69,16 +71,16 @@ namespace M151_WebShop.Controllers
         [Authorize]
         [ValidateAntiForgeryToken]
         [HttpPost]
-        public ActionResult DeleteArticle(int movieId)
+        public ActionResult DeleteArticle(int articleId)
         {
             using (ApplicationDbContext context = ApplicationDbContext.Create())
             {
                 // search for the article
-                Movie movie = context.Movies.Find(movieId);
+                Articles articles = context.Articles.Find(articleId);
 
                 // removes the article from the DB
 
-                context.Movies.Remove(movie);
+                context.Articles.Remove(articles);
                 context.SaveChanges();
 
                 // Return the View

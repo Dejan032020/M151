@@ -1,11 +1,12 @@
 ﻿using System;
+using M151_WebShop.Common;
+using M151_WebShop.DataAccess;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using M151_WebShop.Models;
 
 namespace M151_WebShop
 {

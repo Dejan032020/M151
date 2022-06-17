@@ -66,6 +66,9 @@
     <Reference Include="Microsoft.Owin, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.4.2.2\lib\net45\Microsoft.Owin.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Owin.Host.SystemWeb.4.2.2\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Owin.Security, Version=4.2.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Owin.Security.4.2.2\lib\net45\Microsoft.Owin.Security.dll</HintPath>
     </Reference>
@@ -97,8 +100,8 @@
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.9\lib\net45\System.Web.Helpers.dll</HintPath>
     </Reference>
-    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    <Reference Include="System.Web.Mvc, Version=5.2.9.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.9\lib\net45\System.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.9\lib\net45\System.Web.Razor.dll</HintPath>
@@ -143,6 +146,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\M151_WebShop.Common\M151_WebShop.Common.csproj">
+      <Project>{5A1224B1-6E0D-4762-A46A-AA2BCD1BA549}</Project>
+      <Name>M151_WebShop.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\M151_WebShop.DataAccess\M151_WebShop.DataAccess.csproj">
       <Project>{38ef3a5a-8db2-423f-899a-c61966ca7d86}</Project>
       <Name>M151_WebShop.DataAccess</Name>
@@ -150,6 +157,10 @@
     <ProjectReference Include="..\M151_WebShop.Data\M151_WebShop.Data.csproj">
       <Project>{978dfdb9-34b2-4eaa-a6b7-31e20fdca751}</Project>
       <Name>M151_WebShop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M151_WebShop\M151_WebShop.csproj">
+      <Project>{0626e8ac-13bb-483d-a8ca-116b4fdd6d11}</Project>
+      <Name>M151_WebShop</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

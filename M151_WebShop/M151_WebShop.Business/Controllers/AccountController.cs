@@ -9,6 +9,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using M151_WebShop.Data.Models;
+using M151_WebShop.Common;
 
 namespace M151_WebShop.Business.Controllers
 {

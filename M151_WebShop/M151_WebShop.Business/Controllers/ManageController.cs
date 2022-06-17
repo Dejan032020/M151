@@ -9,6 +9,9 @@ using Microsoft.Owin.Security;
 using M151_WebShop.Data.Models;
 using M151_WebShop.Models;
 using System.Data.Entity;
+using M151_WebShop.Business.Controllers;
+using M151_WebShop.Common;
+using M151_WebShop.DataAccess;
 
 namespace M151_WebShop.Controllers
 {

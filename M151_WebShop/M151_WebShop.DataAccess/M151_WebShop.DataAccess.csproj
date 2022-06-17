@@ -104,7 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="ApplicationUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -117,6 +116,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\M151_WebShop.Common\M151_WebShop.Common.csproj">
+      <Project>{5A1224B1-6E0D-4762-A46A-AA2BCD1BA549}</Project>
+      <Name>M151_WebShop.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\M151_WebShop.Data\M151_WebShop.Data.csproj">
       <Project>{978dfdb9-34b2-4eaa-a6b7-31e20fdca751}</Project>
       <Name>M151_WebShop.Data</Name>

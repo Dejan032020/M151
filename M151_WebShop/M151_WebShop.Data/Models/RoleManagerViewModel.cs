@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using M151_WebShop.Common;
+using M151_WebShop.Data;
 
 namespace M151_WebShop.Models
 {

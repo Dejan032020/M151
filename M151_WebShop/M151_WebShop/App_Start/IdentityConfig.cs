@@ -10,7 +10,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security;
-using M151_WebShop.Data.Models;
+using M151_WebShop.DataAccess;
+using M151_WebShop.Common;
 
 namespace M151_WebShop
 {

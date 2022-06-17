@@ -245,6 +245,16 @@
     <Content Include="Scripts\jquery-3.6.0.min.map" />
     <Content Include="Scripts\jquery-3.6.0.slim.min.map" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\M151_WebShop.Common\M151_WebShop.Common.csproj">
+      <Project>{5A1224B1-6E0D-4762-A46A-AA2BCD1BA549}</Project>
+      <Name>M151_WebShop.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M151_WebShop.DataAccess\M151_WebShop.DataAccess.csproj">
+      <Project>{38EF3A5A-8DB2-423F-899A-C61966CA7D86}</Project>
+      <Name>M151_WebShop.DataAccess</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
