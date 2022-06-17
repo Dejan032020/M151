@@ -1,8 +1,12 @@
-﻿using System;
+﻿using M151_WebShop.DataAccess;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
+using System.Web.Mvc;
+using M151_WebShop.Data.Models.Cart;
 
 namespace M151_WebShop.Data.Models.Cart
 {
@@ -27,7 +31,7 @@ namespace M151_WebShop.Data.Models.Cart
             // Get the matching cart and album instances
             var cartItem = storeDB.Carts.SingleOrDefault(
                 c => c.CartId == ShoppingCartId
-                && c.GameId == article.Id);
+                && c.ArticleId == article.Id);
 
             if (cartItem == null)
             {
@@ -55,7 +59,7 @@ namespace M151_WebShop.Data.Models.Cart
             // Get the cart
             var cartItem = storeDB.Carts.Single(
                 cart => cart.CartId == ShoppingCartId
-                && cart.GameId == id);
+                && cart.ArticleId == id);
 
             int itemCount = 0;
 
@@ -109,7 +113,7 @@ namespace M151_WebShop.Data.Models.Cart
             decimal? total = (from cartItems in storeDB.Carts
                               where cartItems.CartId == ShoppingCartId
                               select (int?)cartItems.Count *
-                              cartItems.Game.Price).Sum();
+                              cartItems.Articles.Price).Sum();
 
             return total ?? decimal.Zero;
         }

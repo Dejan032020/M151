@@ -1,4 +1,5 @@
-﻿using M151_WebShop.Models;
+﻿using M151_WebShop.Data.Models;
+using M151_WebShop.Data.Models.Cart;
 using Microsoft.AspNet.Identity.EntityFramework;
 using System.Data.Entity;
 
@@ -10,7 +11,7 @@ namespace M151_WebShop.DataAccess
 
         public DbSet<Ticket> Tickets { get; set; }
 
-        public DbSet<Cart.Cart> Carts { get; set; }
+        public DbSet<Cart> Carts { get; set; }
 
         public DbSet<Order> Orders { get; set; }
 
