@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
-namespace M151_WebShop.Data.Models
+namespace M151_WebShop.Data.ViewModel
 {
     public class ExternalLoginConfirmationViewModel
     {
