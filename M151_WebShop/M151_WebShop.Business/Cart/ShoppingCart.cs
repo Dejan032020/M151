@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 using M151_WebShop.Data.Models.Cart;
+using M151_WebShop.Data.Models;
 
-namespace M151_WebShop.Data.Models.Cart
+namespace M151_WebShop.Business.Cart
 {
     public partial class ShoppingCart
     {
@@ -36,7 +37,7 @@ namespace M151_WebShop.Data.Models.Cart
             if (cartItem == null)
             {
                 // Create a new cart item if no cart item exists
-                cartItem = new Cart
+                cartItem = new Data.Models.Cart.Cart
                 {
                     ArticleId = article.Id,
                     CartId = ShoppingCartId,
@@ -59,7 +60,7 @@ namespace M151_WebShop.Data.Models.Cart
             // Get the cart
             var cartItem = storeDB.Carts.Single(
                 cart => cart.CartId == ShoppingCartId
-                && cart.ArticleId == id);
+                && cart.RecordId == id);
 
             int itemCount = 0;
 
@@ -91,7 +92,7 @@ namespace M151_WebShop.Data.Models.Cart
             // Save changes
             storeDB.SaveChanges();
         }
-        public List<Cart> GetCartItems()
+        public List<Data.Models.Cart.Cart> GetCartItems()
         {
             return storeDB.Carts.Where(
                 cart => cart.CartId == ShoppingCartId).ToList();
@@ -130,6 +131,7 @@ namespace M151_WebShop.Data.Models.Cart
                 {
                     ArticleId = item.ArticleId,
                     OrderId = order.OrderId,
+                    Price = item.Articles.Price,
                     Quantity = item.Count
                 };
                 // Set the order total of the shopping cart
@@ -175,7 +177,7 @@ namespace M151_WebShop.Data.Models.Cart
             var shoppingCart = storeDB.Carts.Where(
                 c => c.CartId == ShoppingCartId);
 
-            foreach (Cart item in shoppingCart)
+            foreach (Data.Models.Cart.Cart item in shoppingCart)
             {
                 item.CartId = userName;
             }

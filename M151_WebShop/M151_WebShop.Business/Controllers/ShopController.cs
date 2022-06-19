@@ -1,4 +1,4 @@
-﻿using M151_WebShop.Models;
+﻿using M151_WebShop.Data.ViewModel;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
@@ -8,7 +8,7 @@ using System.Web.Mvc;
 using M151_WebShop.Data.Models;
 using M151_WebShop.DataAccess;
 
-namespace M151_WebShop.Controllers
+namespace M151_WebShop.Business.Controllers
 {
     public class ShopController : Controller
     {

@@ -118,8 +118,8 @@
     <Compile Include="Models\Condition.cs" />
     <Compile Include="Models\Criticality.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\RoleManagerViewModel.cs" />
+    <Compile Include="ViewModel\ManageViewModels.cs" />
+    <Compile Include="ViewModel\RoleManagerViewModel.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\USK.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

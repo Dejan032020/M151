@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
+using M151_WebShop.Business.Cart;
 using M151_WebShop.Data.Models.Cart;
 using M151_WebShop.Data.ViewModel;
 using M151_WebShop.DataAccess;
@@ -54,7 +55,7 @@ namespace M151_WebShop.Business.Controllers
 
             // Get the name of the album to display confirmation
             string albumName = storeDB.Carts
-                .Single(item => item.ArticleId == id).Articles.Name;
+                .Single(item => item.RecordId == id).Articles.Name;
 
             // Remove from cart
             int itemCount = cart.RemoveFromCart(id);

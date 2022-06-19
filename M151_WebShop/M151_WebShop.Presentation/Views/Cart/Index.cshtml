@@ -11,7 +11,7 @@
     <em>Review</em> your cart:
 </h3>
 <p class="button">
-    @Html.ActionLink("Checkout >> ", "Payed", "Cart")
+    @Html.ActionLink("Checkout >> ", "Pay", "Cart")
 </p>
 <div id="update-message">
 </div>
@@ -30,22 +30,18 @@
     </tr>
     @foreach (var item in Model.CartItems)
     {
-        <tr id="row-@item.ArticleId">
+        <tr id="row-@item.RecordId">
             <td>
                 @Html.ActionLink(item.Articles.Name, "Details", "Store", new { id = item.ArticleId }, null)
             </td>
             <td>
                 @item.Articles.Price
             </td>
-            <td id="item-count-@item.ArticleId">
+            <td id="item-count-@item.RecordId">
                 @item.Count
             </td>
             <td>
-                <a href="#" class="RemoveLink"
-                   data-id="@item.ArticleId">
-                    Remove
-                    from cart
-                </a>
+                <a href="#" class="RemoveLink" data-id="@item.RecordId">Remove from cart</a>
             </td>
         </tr>
     }
