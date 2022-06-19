@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 using Microsoft.AspNet.Identity;
 using Microsoft.Owin.Security;
 
-namespace M151_WebShop.Data.ViewModel
+namespace M151_WebShop.Presentation.ViewModel
 {
     public class IndexViewModel
     {

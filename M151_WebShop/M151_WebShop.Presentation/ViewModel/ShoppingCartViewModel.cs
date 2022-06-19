@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using M151_WebShop.Data.Models.Cart;
 
-namespace M151_WebShop.Data.ViewModel
+namespace M151_WebShop.Presentation.ViewModel
 {
     public class ShoppingCartViewModel
     {

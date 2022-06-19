@@ -47,8 +47,17 @@
     <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
       <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.3\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.3\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.Owin, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Identity.Owin.2.2.3\lib\net45\Microsoft.AspNet.Identity.Owin.dll</HintPath>
@@ -188,7 +197,18 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ShopController.cs" />
+    <Compile Include="Controllers\SupportController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModel\AccountViewModels.cs" />
+    <Compile Include="ViewModel\ManageViewModels.cs" />
+    <Compile Include="ViewModel\RoleManagerViewModel.cs" />
+    <Compile Include="ViewModel\ShoppingCartRemoveViewModel.cs" />
+    <Compile Include="ViewModel\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -241,9 +261,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\M151_WebShop.Business\M151_WebShop.Business.csproj">
+      <Project>{F4F9F897-FEE0-4D60-82C8-19C97FE4AAEA}</Project>
+      <Name>M151_WebShop.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M151_WebShop.Common\M151_WebShop.Common.csproj">
+      <Project>{5A1224B1-6E0D-4762-A46A-AA2BCD1BA549}</Project>
+      <Name>M151_WebShop.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M151_WebShop.DataAccess\M151_WebShop.DataAccess.csproj">
+      <Project>{38EF3A5A-8DB2-423F-899A-C61966CA7D86}</Project>
+      <Name>M151_WebShop.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\M151_WebShop.Data\M151_WebShop.Data.csproj">
       <Project>{978dfdb9-34b2-4eaa-a6b7-31e20fdca751}</Project>
       <Name>M151_WebShop.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\M151_WebShop\M151_WebShop.csproj">
+      <Project>{0626e8ac-13bb-483d-a8ca-116b4fdd6d11}</Project>
+      <Name>M151_WebShop</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

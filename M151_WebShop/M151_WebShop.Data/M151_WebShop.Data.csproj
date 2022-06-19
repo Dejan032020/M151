@@ -109,7 +109,6 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ViewModel\AccountViewModels.cs" />
     <Compile Include="Models\Articles.cs" />
     <Compile Include="Models\Cart\Cart.cs" />
     <Compile Include="Models\Cart\Order.cs" />
@@ -118,13 +117,9 @@
     <Compile Include="Models\Condition.cs" />
     <Compile Include="Models\Criticality.cs" />
     <Compile Include="Models\Genre.cs" />
-    <Compile Include="ViewModel\ManageViewModels.cs" />
-    <Compile Include="ViewModel\RoleManagerViewModel.cs" />
     <Compile Include="Models\Ticket.cs" />
     <Compile Include="Models\USK.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ViewModel\ShoppingCartRemoveViewModel.cs" />
-    <Compile Include="ViewModel\ShoppingCartViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

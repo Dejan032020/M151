@@ -5,7 +5,7 @@ using System.Web;
 using M151_WebShop.Common;
 using M151_WebShop.Data;
 
-namespace M151_WebShop.Data.ViewModel
+namespace M151_WebShop.Presentation.ViewModel
 {
     public class RoleManagerViewModel
     {

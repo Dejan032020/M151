@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 using System.Web.Mvc;
 using M151_WebShop.Business.Cart;
 using M151_WebShop.Data.Models.Cart;
-using M151_WebShop.Data.ViewModel;
 using M151_WebShop.DataAccess;
+using M151_WebShop.Presentation.ViewModel;
 
-namespace M151_WebShop.Business.Controllers
+namespace M151_WebShop.Presentation.Controllers
 {
     public class CartController : Controller
     {
