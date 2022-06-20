@@ -25,8 +25,15 @@
                     @if (Request.IsAuthenticated)
                     {
                         <li>@Html.ActionLink("Shop", "ShopSite", "Shop")</li>
+                        if (!User.IsInRole("Administrator"))
+                        {
+                            <li>@Html.ActionLink("Contact Us", "SupportView", "Support")</li>
+                        }
+
                         if (User.IsInRole("Administrator"))
                         {
+                            <li>@Html.ActionLink("Ticket Overview", "TicketOverview", "Support")</li>
+
                             <li>@Html.ActionLink("Role Manager", "RoleManager", "Manage")</li>
                         }
                     }
@@ -39,7 +46,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+            <p>&copy; @DateTime.Now.Year - Simon Erzinger, Dejan Mirkovic</p>
         </footer>
     </div>
 

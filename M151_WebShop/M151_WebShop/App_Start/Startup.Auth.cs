@@ -59,11 +59,11 @@ namespace M151_WebShop
             //   appId: "",
             //   appSecret: "");
 
-            //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
-            //{
-            //    ClientId = "",
-            //    ClientSecret = ""
-            //});
+            app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
+            {
+                ClientId = "162435372008-a0l2aou2jmko4nv38donu196870olnhj.apps.googleusercontent.com",
+                ClientSecret = "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"
+            });
         }
     }
 }
