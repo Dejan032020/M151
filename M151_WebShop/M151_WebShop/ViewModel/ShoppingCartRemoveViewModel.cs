@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace M151_WebShop.Presentation.ViewModel
+namespace M151_WebShop.ViewModel
 {
     public class ShoppingCartRemoveViewModel
     {

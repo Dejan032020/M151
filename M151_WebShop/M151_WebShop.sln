@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31624.102
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M151_WebShop", "M151_WebShop\M151_WebShop.csproj", "{0626E8AC-13BB-483D-A8CA-116B4FDD6D11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M151_WebShop.Presentation", "M151_WebShop\M151_WebShop.Presentation.csproj", "{0626E8AC-13BB-483D-A8CA-116B4FDD6D11}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "M151_WebShop.DataAccess", "M151_WebShop.DataAccess\M151_WebShop.DataAccess.csproj", "{38EF3A5A-8DB2-423F-899A-C61966CA7D86}"
 EndProject

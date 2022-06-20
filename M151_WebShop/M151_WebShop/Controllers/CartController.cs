@@ -1,7 +1,7 @@
 ﻿using System.Linq;
 using System.Web.Mvc;
 using M151_WebShop.DataAccess;
-using M151_WebShop.Presentation.ViewModel;
+using M151_WebShop.ViewModel;
 using M151_WebShop.Business.Cart;
 
 namespace M151_WebShop.Controllers
