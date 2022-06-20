@@ -1,0 +1,17 @@
+﻿@model ICollection<M151_WebShop.Data.Models.Ticket>
+
+@foreach (M151_WebShop.Data.Models.Ticket ticket in Model)
+{
+    <hr />
+    <p>User: @ticket.User.UserName</p>
+    <p>Case: @ticket.Case</p>
+    <p>Criticality: @ticket.Criticality</p>
+    <p>Textarea: @ticket.Textarea</p>
+    <hr />
+
+    using (Html.BeginForm("DeleteTicket", "Support", new { ticketId = ticket.Id }, FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
+        <input type="submit" class="btn btn-primary inline" value="Delete" onclick="return confirm('Do you want to delete this Ticket?')" />
+    }
+}

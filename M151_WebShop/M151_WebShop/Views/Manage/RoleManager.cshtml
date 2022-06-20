@@ -1,0 +1,25 @@
+﻿@using M151_WebShop.Common
+@model M151_WebShop.Presentation.ViewModel.RoleManagerViewModel
+
+@foreach (ApplicationUser user in Model.Users)
+{
+    <div>
+        <p>@user.UserName</p>
+        @if (user.Roles.Count() != 0 && user.Roles.First().RoleId == Model.Roles.Where(r => r.Name == "Administrator").First().Id)
+        {
+            using (Html.BeginForm("RemoveAdminRole", "Manage", new { userId = user.Id }, FormMethod.Post, new { @class = "form-inline" }))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Adminrechte entfernen" class="btn btn-primary" style="background-color: rgb(177 207 225);" onclick="return confirm('Willst du dem User wirklich die Adminrechte entziehen?')" />
+            }
+        }
+        else
+        {
+            using (Html.BeginForm("AddAdminRole", "Manage", new { userId = user.Id }, FormMethod.Post, new { @class = "form-inline" }))
+            {
+                @Html.AntiForgeryToken()
+                <input type="submit" value="Adminrechte hinzufügen" class="btn btn-primary" style="background-color: rgb(177 207 225);" onclick="return confirm('Willst du dem User wirklich Adminrechte erteilen?')" />
+            }
+        }
+    </div>
+}

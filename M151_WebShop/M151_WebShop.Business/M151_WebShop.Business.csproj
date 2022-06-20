@@ -152,10 +152,6 @@
       <Project>{978dfdb9-34b2-4eaa-a6b7-31e20fdca751}</Project>
       <Name>M151_WebShop.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\M151_WebShop\M151_WebShop.csproj">
-      <Project>{0626e8ac-13bb-483d-a8ca-116b4fdd6d11}</Project>
-      <Name>M151_WebShop</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

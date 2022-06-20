@@ -1,0 +1,32 @@
+﻿@model ICollection<M151_WebShop.Data.Models.Articles>
+
+<button>
+    @Html.ActionLink("Create Article", "CreateArticle")
+</button>
+
+@foreach (M151_WebShop.Data.Models.Articles article in Model)
+{
+    using (Html.BeginForm($"GetArticle/{article.Id}", "Shop", FormMethod.Get, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        Html.AntiForgeryToken();
+        <hr />
+        <button style="background-color:white; border:none;">
+            <p>@article.Name</p>
+            <p>@article.Genre</p>
+            @*<p>Veröffentlicht von: @movie.User.UserName</p>*@
+            <p>@article.Price</p>
+            <p>@article.USK</p>
+        </button>
+        <hr />
+    }
+    using (Html.BeginForm("DeleteArticle", "Shop", new { movieId = article.Id }, FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+    {
+        //if (User.IsInRole("Administrator"))
+        //{
+        {
+                @Html.AntiForgeryToken()
+                <input type="submit" class="btn btn-primary inline" value="delete" onclick="return confirm('Do you want to delete the Movie @article.Name ?')" />
+        }
+        //}
+    }
+}

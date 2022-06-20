@@ -1,0 +1,21 @@
+﻿@model M151_WebShop.Data.Models.Ticket
+
+<h1>Registration form</h1>
+@using (Html.BeginForm("CreateTicket", "Support", FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(m => m.Case, "what type is the concern?")
+        @Html.EnumDropDownListFor(m => m.Case, " ", new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Criticality, "what type is the concern?")
+        @Html.EnumDropDownListFor(m => m.Criticality, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Textarea, "describe your concern")
+        <br />
+        @Html.TextAreaFor(m => m.Textarea, "Enter text here...")
+    </div>
+    <input type="submit" class="btn btn-primary inline" value="submit" />
+}
