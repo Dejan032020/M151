@@ -13,7 +13,7 @@
         <button style="background-color:white; border:none;">
             <p>@article.Name</p>
             <p>@article.Genre</p>
-            @*<p>Veröffentlicht von: @movie.User.UserName</p>*@
+            <p>Veröffentlicht von: @article.User.UserName</p>
             <p>@article.Price</p>
             <p>@article.USK</p>
         </button>
@@ -21,12 +21,12 @@
     }
     using (Html.BeginForm("DeleteArticle", "Shop", new { movieId = article.Id }, FormMethod.Post, new { @class = "form-horizontal", role = "form", enctype = "multipart/form-data" }))
     {
-        //if (User.IsInRole("Administrator"))
-        //{
+        if (User.IsInRole("Administrator"))
         {
+            {
                 @Html.AntiForgeryToken()
                 <input type="submit" class="btn btn-primary inline" value="delete" onclick="return confirm('Do you want to delete the Movie @article.Name ?')" />
+            }
         }
-        //}
     }
 }
