@@ -10,7 +10,7 @@ using M151_WebShop.Data.Models;
 using System.Data.Entity;
 using M151_WebShop.Common;
 using M151_WebShop.DataAccess;
-using M151_WebShop.Presentation.ViewModel;
+using M151_WebShop.ViewModel;
 
 namespace M151_WebShop.Controllers
 {
